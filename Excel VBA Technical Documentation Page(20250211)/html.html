@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <!-- メタデータの設定 -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Excel VBA Document</title>
+    <!-- 外部スタイルシートの読み込み -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- ナビゲーションバー -->
+    <nav id="navbar">
+      <header>Excel VBA ドキュメント</header>
+      <ul>
+        <!-- 各セクションへのリンク -->
+        <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+        <li><a class="nav-link" href="#VBA_and_VB">VBA and VB</a></li>
+        <li>
+          <a class="nav-link" href="#fundamental_knowledge"
+            >fundamental knowledge</a
+          >
+        </li>
+        <li>
+          <a class="nav-link" href="#screen_configuration"
+            >screen configuration</a
+          >
+        </li>
+        <li><a class="nav-link" href="#variable">variable</a></li>
+        <li><a class="nav-link" href="#array">array</a></li>
+        <li><a class="nav-link" href="#constant">constant</a></li>
+        <li><a class="nav-link" href="#operator">operator</a></li>
+        <li><a class="nav-link" href="#function">function</a></li>
+        <li><a class="nav-link" href="#procedure">procedure</a></li>
+        <li>
+          <a class="nav-link" href="#control_construct">control construct</a>
+        </li>
+        <li><a class="nav-link" href="#debug">debug</a></li>
+        <li><a class="nav-link" href="#reference">reference</a></li>
+      </ul>
+    </nav>
+    <main id="main-doc">
+      <!-- Introductionセクション -->
+      <section class="main-section" id="Introduction">
+        <header><h3>Introduction</h3></header>
+        <article>
+          <p>
+            Excel
+            は、多くの人々が日常的に使用する強力なツールです。その中で、VBA
+            (Visual Basic for Applications) は、Excel
+            をさらに強力にカスタマイズし、自動化するためのプログラミング言語です。VBA
+            を使用することで、繰り返し作業を効率化したり、複雑な計算を自動化したり、独自の関数やフォームを作成することが可能になります。
+          </p>
+          <p>
+            このドキュメントでは、VBAの基礎から応用までを網羅的に解説します。プログラミング初心者の方から、より高度なカスタマイズを目指す方まで、幅広い層に役立つ情報を提供します。VBA
+            を学ぶことで、Excel
+            の操作がさらに快適になり、業務の効率化が図れます。しっかり勉強していきましょう！
+          </p>
+        </article>
+      </section>
+      <!-- VBA and VBセクション -->
+      <section class="main-section" id="VBA_and_VB">
+        <header><h3>VBA and VB</h3></header>
+        <article>
+          <p>
+            VBA (Visual Basic for Applications) と VB (Visual Basic)
+            は、どちらも Microsoft
+            が開発したプログラミング言語ですが、使用目的や機能にいくつかの違いがあります。
+          </p>
+          <h4>VBA (Visual Basic for Applications)</h4>
+          <p>
+            VBA は、主に Microsoft Office 製品（Excel、Word、Access
+            など）の内部で使用されるスクリプト言語です。以下の点が特徴です：
+          </p>
+          <ul>
+            <li>
+              Office アプリケーションの自動化: VBA は、Excel などの Office
+              アプリケーション内でのタスク自動化に特化しています。ユーザーが繰り返し行う作業を自動化するマクロの作成が可能です。
+            </li>
+            <li>
+              組み込み環境: VBA は、各 Office
+              アプリケーションに組み込まれているため、別途インストールする必要はありません。
+            </li>
+            <li>
+              簡便性: VBA
+              のコードは比較的シンプルで、プログラミング初心者でも学びやすい設計です。
+            </li>
+          </ul>
+          <h4>VB (Visual Basic)</h4>
+          <p>
+            一方、VB
+            はスタンドアロンのプログラムやアプリケーションを開発するためのフル機能のプログラミング言語です。以下の点が特徴です：
+          </p>
+          <ul>
+            <li>
+              汎用プログラミング: VB は、Windows
+              アプリケーションの開発に広く使用される汎用プログラミング言語です。独自のアプリケーションやツールを作成することができます。
+            </li>
+            <li>
+              環境: VBA は Office 製品内で使用されますが、VB は Visual Studio
+              という統合開発環境で使用されます。
+            </li>
+            <li>
+              機能: VB は、VBA
+              よりも多くの機能と柔軟性を持ち、より複雑なアプリケーションの開発が可能です。
+            </li>
+          </ul>
+        </article>
+      </section>
+      <!-- fundamental knowledgeセクション -->
+      <section class="main-section" id="fundamental_knowledge">
+        <header><h3>fundamental knowledge</h3></header>
+        <article>
+          <!-- 変数についての説明 -->
+          <h4>変数</h4>
+          <p>
+            変数はデータを一時的に格納するための記憶場所です。VBA
+            では、変数を使用してデータを操作したり計算したりします。変数の宣言方法やデータ型について理解することが重要です。
+          </p>
+          <!-- データ型についての説明 -->
+          <h4>データ型</h4>
+          <p>
+            VBAでは、変数には特定のデータ型を割り当てる必要があります。代表的なデータ型には、整数（Integer）、長整数（Long）、浮動小数点数（Double）、文字列（String）などがあります。正しいデータ型を選択することで、プログラムの効率が向上します。
+          </p>
+          <!-- 定数についての説明 -->
+          <h4>定数</h4>
+          <p>
+            定数は一度設定されたら変更されない値です。定数を使用することで、プログラムの可読性が向上し、誤りが減少します。
+          </p>
+          <!-- 演算子についての説明 -->
+          <h4>演算子</h4>
+          <p>
+            演算子は、数値や文字列などのデータを操作するための記号やキーワードです。代表的な演算子には、四則演算子（+、-、*、/）、比較演算子（=、＜、＞）、論理演算子（And、Or、Not）などがあります。
+          </p>
+          <!-- 制御構文についての説明 -->
+          <h4>制御構文</h4>
+          <p>
+            プログラムの流れを制御するための構文です。条件分岐（If...Then...Else）、ループ（For...Next、While...Wend、Do...Loop）などが代表的です。制御構文を使いこなすことで、複雑な処理を効率的に実行できます。
+          </p>
+          <!-- 関数についての説明 -->
+          <h4>関数</h4>
+          <p>
+            関数は、特定の処理を実行し、その結果を返す一連のコードです。VBA
+            には、標準関数（例えば、数値の四捨五入を行う Round
+            関数）や、自作関数を作成する機能があります。
+          </p>
+          <!-- プロシージャについての説明 -->
+          <h4>プロシージャ</h4>
+          <p>
+            プロシージャは、特定の処理を実行するための手続きです。サブルーチン（Sub）と関数（Function）の2種類があり、それぞれの違いを理解して使い分けることが重要です。
+          </p>
+        </article>
+      </section>
+      <!-- screen configurationセクション -->
+      <section class="main-section" id="screen_configuration">
+        <header><h3>screen configuration</h3></header>
+        <article>
+          <!-- プロジェクトエクスプローラーの説明 -->
+          <figure>
+            <figcaption>プロジェクトエクスプローラー</figcaption>
+            <img src="1projectexplorer.png" alt="projectexplorer" />
+          </figure>
+          <p>
+            プロジェクトエクスプローラーは、現在のブック内のすべての VBA
+            プロジェクトとその要素（モジュール、フォーム、クラス）を一覧表示します。ここから各要素にアクセスして編集することができます。
+          </p>
+          <!-- プロパティウィンドウの説明 -->
+          <figure>
+            <figcaption>プロパティウィンドウ</figcaption>
+            <img src="2propertywindow.png" alt="propertywindow" />
+            <p>
+              プロパティウィンドウは、選択したオブジェクトのプロパティを表示および編集するためのウィンドウです。例えば、ユーザーフォームやコントロールの外観や動作をカスタマイズできます。
+            </p>
+          </figure>
+          <!-- コードウィンドウの説明 -->
+          <figure>
+            <figcaption>コードウィンドウ</figcaption>
+            <img src="3codewindow.png" alt="codewindow" />
+            <p>
+              コードウィンドウは、VBA
+              プロジェクト内のモジュールやフォームのコードを表示および編集するためのウィンドウです。ここに
+              VBA コードを入力して、プログラムを作成します。
+            </p>
+          </figure>
+          <!-- イミディエイトウィンドウの説明 -->
+          <figure>
+            <figcaption>イミディエイトウィンドウ</figcaption>
+            <img src="4immediate window.png" alt="imidiate window" />
+            <p>
+              イミディエイトウィンドウは、デバッグ時に使用される便利なツールで、コードを実行しながら即座に変数の値を確認したり、スクリプトを実行することができます。例えば、以下のように使用します：
+            </p>
+          </figure>
+        </article>
+      </section>
+      <!-- variableセクション -->
+      <section class="main-section" id="variable">
+        <header><h3>variable</h3></header>
+        <article>
+          <!-- 基本概念の説明 -->
+          <h4>基本概念</h4>
+          <p>
+            変数とは、プログラム内でデータを一時的に保存するための記号的な名前です。変数には数値や文字列などのデータを格納し、後で参照したり操作したりすることができます。
+          </p>
+          <!-- 変数の宣言方法の説明 -->
+          <h4>変数の宣言方法</h4>
+          <p>
+            変数を使用する前に、宣言する必要があります。宣言にはキーワード Dim
+            を使用します。例えば、以下のように宣言します。<br />例：<code
+              >Dim variableName As DataType</code
+            >
+          </p>
+          <!-- 変数の種類（データ型）の説明 -->
+          <h4>変数の種類（データ型）</h4>
+          <ul>
+            <li>Integer：整数（例：1, -5）</li>
+            <li>Long：大きな整数（例：123456789）</li>
+            <li>Single：単精度浮動小数点数（例：3.14）</li>
+            <li>Double：倍精度浮動小数点数（例：3.1415926535）</li>
+            <li>String：文字列（例："Hello"）</li>
+            <li>Boolean：論理値（例：True, False）</li>
+          </ul>
+          <!-- 変数のスコープとライフタイムの説明 -->
+          <h4>変数のスコープとライフタイム</h4>
+          <p>
+            変数のスコープとは、変数が有効な範囲を指します。変数のスコープには以下の3種類があります。
+          </p>
+          <ol>
+            <li>
+              ローカルスコープ：プロシージャ内で宣言された変数は、そのプロシージャ内でのみ有効です。
+            </li>
+            <li>
+              モジュールスコープ：モジュールレベルで宣言された変数（DimまたはPrivateを使用）は、そのモジュール内のすべてのプロシージャで有効です。
+            </li>
+            <li>
+              グローバルスコープ：モジュールの外で宣言された変数（Publicを使用）は、すべてのモジュールからアクセスできます。
+            </li>
+          </ol>
+          <!-- 変数の初期化と値の代入の説明 -->
+          <h4>変数の初期化と値の代入</h4>
+          <p>
+            変数を宣言すると、初期値が自動的に設定されます。例えば、数値型の変数は0に、文字列型の変数は空の文字列に初期化されます。変数に値を代入するには、代入演算子
+            = を使用します。
+          </p>
+          <pre>
+<code>
+    Dim total As Integer
+    total = 10
+
+    Dim name As String
+    name = "John Doe"
+
+    Dim isActive As Boolean
+    isActive = True
+</code>
+        </pre>
+          <!-- 変数の使い方の説明 -->
+          <h4>変数の使い方</h4>
+          <p>
+            変数を使用することで、データを一時的に保存したり、計算したり、操作したりすることができます。例えば、以下のように変数を使用して計算を行います。
+          </p>
+          <pre>
+<code>
+    Dim num1 As Integer
+    Dim num2 As Integer
+    Dim sum As Integer
+
+    num1 = 5
+    num2 = 10
+    sum = num1 + num2
+    </code>
+        </pre>
+        </article>
+      </section>
+      <!-- arrayセクション -->
+      <section class="main-section" id="array">
+        <header><h3>array</h3></header>
+        <article>
+          <p>
+            配列は同じデータ型の複数の値を一つの変数で管理するためのもので、宣言方法は
+            Dim 配列名(要素数) As データ型
+            とし、一次元配列や多次元配列を使用して要素にインデックスでアクセスでき、動的配列の場合は
+            ReDim キーワードを使ってサイズを変更し、例えば Dim scores(10) As
+            Integer のように宣言し、 scores(0) = 90 のように代入し、 For i = 0
+            To UBound(scores) Debug.Print scores(i) Next i
+            のようにループ処理で要素を操作することができます。
+          </p>
+        </article>
+      </section>
+      <!-- constantセクション -->
+      <section class="main-section" id="constant">
+        <header><h3>constant</h3></header>
+        <article>
+          <p>
+            定数は一度設定すると変更できないデータのことで、Constキーワードを使って宣言し、例えば
+            Const PI As Double = 3.14159
+            のように使用し、定数はプログラムの可読性と保守性を向上させ、不変性により誤って値を変更するリスクを回避でき、また一箇所で定義することでメンテナンスが容易になり、例えば円の面積計算などで意図を明確にすることができます。
+          </p>
+        </article>
+      </section>
+      <!-- operatorセクション -->
+      <section class="main-section" id="operator">
+        <header><h3>operator</h3></header>
+        <article>
+          <p>
+            演算子は数値やデータを操作するための記号やキーワードで、主な種類として、数値計算を行う算術演算子（例：+足し算、-引き算）、値を比較する比較演算子（例：=等しい、＜＞等しくない）、論理値を操作する論理演算子（例：And両方真、Orどちらか真）、文字列を連結する連結演算子（例：&文字列連結）、および変数に値を代入する代入演算子（例：=代入）があり、例えば
+            Dim result As Integer = 5 + 3
+            のように使用し、これらの演算子を駆使してプログラム内で様々な操作を実現します。
+          </p>
+        </article>
+      </section>
+      <!-- functionセクション -->
+      <section class="main-section" id="function">
+        <header><h3>function</h3></header>
+        <article>
+          <p>
+            関数は特定のタスクや計算を行うためのコードブロックで、引数として入力を受け取り、処理を行い、結果を返すものであり、Excel
+            VBAでは組み込み関数（例：SUM、AVERAGE）やユーザー定義関数を使用して、例えばデータの集計や特定の計算を効率的に実行することができ、Functionキーワードを使って定義し、End
+            Functionで終了し、呼び出し元で結果を利用できるため、コードの再利用性と可読性を向上させます。
+          </p>
+        </article>
+      </section>
+      <!-- procedureセクション -->
+      <section class="main-section" id="procedure">
+        <header><h3>procedure</h3></header>
+        <article>
+          <p>
+            プロシージャは特定のタスクや機能を実行するためのコードブロックで、Excel
+            VBAにおいては
+            Subプロシージャ（引数を返さない）とFunctionプロシージャ（引数を返す）があります。プロシージャは再利用可能なコードを作成し、複数の場所から呼び出して使用することができ、プログラムの可読性と保守性を向上させるために使用され、例えば
+            Sub CalculateTotal() のようにSubキーワードを使って定義し、End
+            Subで終了し、プロシージャ内で変数の操作や他のプロシージャの呼び出しを行うことができ、呼び出し元では
+            Call CalculateTotal または単に CalculateTotal として実行します。
+          </p>
+        </article>
+      </section>
+      <!-- control constructセクション -->
+      <section class="main-section" id="control_construct">
+        <header><h3>control construct</h3></header>
+        <article>
+          <p>
+            制御構文は、プログラムの実行フローを制御するための手法です。プログラム内の処理を条件に基づいて分岐させたり、繰り返し処理を行うことができます。主な制御構文には以下の種類があります：
+          </p>
+          <p></p>
+          <ul>
+            <li>If文: 条件が真の場合に特定の処理を実行します。</li>
+            <pre>
+    <code>
+    If condition Then
+        ' 条件が真のときの処理
+    Else
+        ' 条件が偽のときの処理
+    End If
+    </code>
+            </pre>
+            <li>
+              Select Case文:
+              変数の値に応じて複数の処理の中から適切な処理を選択します。
+            </li>
+            <pre>
+    <code>
+    Select Case expression
+        Case value1
+            ' value1 のときの処理
+        Case value2
+            ' value2 のときの処理
+        Case Else
+            ' それ以外のときの処理
+    End Select
+    </code>
+            </pre>
+            <li>Forループ: 指定した回数だけ繰り返し処理を行います。</li>
+            <pre>
+    <code>
+    For counter = start To end
+        ' 繰り返し処理
+    Next counter
+    </code>
+            </pre>
+            <li>Whileループ: 条件が真の間、繰り返し処理を行います。</li>
+            <pre>
+    <code>
+    While condition
+        ' 繰り返し処理
+    Wend
+    </code>
+            </pre>
+          </ul>
+        </article>
+      </section>
+      <!-- debugセクション -->
+      <section class="main-section" id="debug">
+        <header><h3>debug</h3></header>
+        <article>
+          <p>
+            Excel
+            VBAのデバッグは、コードのエラーを見つけて修正するための重要な作業です。デバッグモードに入ると、エラーが発生した行がハイライトされ、コードの修正が可能になります。ブレークポイントを設定することで、特定の行でコードの実行を一時停止し、変数の値やコードの動作を確認できます。また、ステップ実行を使ってコードを一行ずつ実行しながら動作を確認することができ、変数の監視ウィンドウを使用して、変数の値をリアルタイムで確認できます。エラーメッセージはエラーの原因を特定するための重要な情報源であり、Immediateウィンドウを使用して直接コードを実行したり、変数の値を確認したりできます。これらの方法を組み合わせて使用することで、Excel
+            VBAのデバッグを効率的に行うことができます。
+          </p>
+        </article>
+      </section>
+      <!-- referenceセクション -->
+      <section class="main-section" id="reference">
+        <header><h3>reference</h3></header>
+        <article>
+          <p><a href="https://www.vba-ie.net/">VBAのIE制御入門</a></p>
+          <p>
+            <a
+              href="https://learn.microsoft.com/ja-jp/office/vba/api/overview/language-reference"
+              >Visual Basic for Applications (VBA) の言語リファレンス</a
+            >
+          </p>
+        </article>
+      </section>
+    </main>
+    <footer></footer>
+  </body>
+</html>
